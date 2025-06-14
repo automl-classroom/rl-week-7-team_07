@@ -1,0 +1,19 @@
+# Comparison of DQN (ε-greedy) vs RND-DQN
+
+Both agents were trained on the same environment, using identical seeds and hyperparameters except for their exploration method.
+
+Evaluation used IQM scores across multiple seeds.
+
+## Observations
+- RND-DQN learns faster and reaches higher performance. It shows more variance early on due to exploration, but stabilizes.
+- ε-greedy DQN improves slowly and peaks lower.
+
+## Is RND a good fit for DQN?
+- Yes, in terms of exploration power. But RND-DQN can be unstable if the bonus is not scaled properly, especially with bootstrapped Q-learning.
+- It may be more suited to on-policy methods, but works well with DQN when properly configured.
+
+## Conclusion
+RND enhances learning efficiency over ε-greedy. The IQM plot confirms this.
+
+## Plot
+- `DQN_vs_RND-DQN_-_IQM_Evaluation.png`
